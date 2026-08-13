@@ -18,77 +18,29 @@ body {
     text-align: center;
 }
 
-h1 {
-    color: #7cb342;
-    margin-bottom: 20px;
-}
+h1, h2, h3 { color: #7cb342; }
 
-#clues-container {
-    background: #f9fbe7;
-    padding: 15px;
-    border-radius: 8px;
-    text-align: left;
-    margin-bottom: 20px;
-    border-left: 5px solid #7cb342;
-}
+input { padding: 10px; border: 1px solid #ccc; border-radius: 5px; width: 60%; margin-right: 5px;}
+button { padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; background-color: #7cb342; color: white; font-weight: bold;}
+button:hover { background-color: #558b2f; }
+button:disabled { background-color: #ccc; cursor: not-allowed; }
 
-#dicas-lista li {
-    margin-bottom: 8px;
-    line-height: 1.5;
-}
+#players-list { background: #f9fbe7; padding: 15px; border-radius: 8px; margin-top: 20px; text-align: left; }
+#lobby-players li { list-style: none; padding: 5px 0; border-bottom: 1px solid #e0e0e0; }
+#lobby-players .pronto { color: green; font-weight: bold; float: right;}
 
-#options-container {
-    margin-top: 20px;
-}
+#game-header { display: flex; justify-content: space-between; font-size: 1.2rem; font-weight: bold; margin-bottom: 20px;}
 
-#botoes-opcoes {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    margin-top: 15px;
-}
+#clues-container { background: #f9fbe7; padding: 15px; border-radius: 8px; text-align: left; margin-bottom: 20px; border-left: 5px solid #7cb342; }
+#dicas-lista li { margin-bottom: 8px; line-height: 1.5; }
 
-button {
-    padding: 12px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: 0.2s;
-    font-weight: bold;
-}
+#botoes-opcoes { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 15px; }
+#botoes-opcoes button { background-color: #e0e0e0; color: #333; width: 100%; }
+#botoes-opcoes button:hover { background-color: #d4e157; transform: scale(1.02); }
+#botoes-opcoes button:disabled { opacity: 0.6; transform: none; }
 
-.opcao-btn {
-    background-color: #e0e0e0;
-    color: #333;
-}
+#resultado { margin: 15px 0; font-size: 1.2rem; font-weight: bold; }
+#esperando-resposta { font-style: italic; display: none; }
 
-.opcao-btn:hover {
-    background-color: #d4e157;
-    transform: scale(1.02);
-}
-
-.opcao-btn:disabled {
-    cursor: not-allowed;
-    opacity: 0.6;
-}
-
-#proximo-btn {
-    background-color: #7cb342;
-    color: white;
-    padding: 15px 30px;
-    font-size: 18px;
-    margin-top: 20px;
-    width: 100%;
-}
-
-#proximo-btn:hover {
-    background-color: #558b2f;
-}
-
-#resultado {
-    margin-top: 15px;
-    font-size: 18px;
-    font-weight: bold;
-    min-height: 30px;
-}
+#ranking-list { text-align: left; font-size: 1.2rem; padding: 0 20px;}
+#ranking-list li { padding: 10px; border-bottom: 1px solid #eee; }

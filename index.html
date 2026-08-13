@@ -3,25 +3,52 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Quem Sou Eu? - TS</title>
+    <title>Quem Sou Eu? - Multiplayer</title>
     <link rel="stylesheet" href="./src/style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>🔍 QUEM SOU EU?</h1>
+    <!-- TELA DE LOBBY -->
+    <div id="lobby-screen" class="container">
+        <h1>🕹️ QUEM SOU EU?</h1>
+        <div class="input-group">
+            <input type="text" id="nome-input" placeholder="Digite seu nome" maxlength="20">
+            <button id="entrar-btn">Entrar na Sala</button>
+        </div>
+        <div id="players-list">
+            <h3>Jogadores aguardando:</h3>
+            <ul id="lobby-players"></ul>
+        </div>
+        <button id="pronto-btn" style="display:none; margin-top:20px;">Estou Pronto!</button>
+        <div id="lobby-status"></div>
+    </div>
+
+    <!-- TELA DO JOGO -->
+    <div id="game-screen" class="container" style="display:none;">
+        <div id="game-header">
+            <span id="timer-display">⏱️ 60s</span>
+            <span id="pontos-display">⭐ 0 pts</span>
+        </div>
         <div id="game-area">
             <div id="clues-container">
-                <h2>Dicas:</h2>
+                <h2 id="dica-nivel">Dica Nível 3 (Vale 3 pontos):</h2>
                 <ul id="dicas-lista"></ul>
             </div>
             <div id="options-container">
-                <h2>Escolha uma personagem:</h2>
+                <h2>Escolha sua resposta:</h2>
                 <div id="botoes-opcoes"></div>
             </div>
         </div>
         <div id="resultado"></div>
-        <button id="proximo-btn" style="display:none;">Próximo Personagem</button>
+        <div id="esperando-resposta" style="color: gray; margin-top: 10px;">Aguardando outros jogadores responderem...</div>
     </div>
+
+    <!-- TELA DE RANKING -->
+    <div id="ranking-screen" class="container" style="display:none;">
+        <h1>🏆 RANKING FINAL</h1>
+        <ol id="ranking-list"></ol>
+        <button id="reiniciar-btn">Nova Rodada</button>
+    </div>
+
     <script type="module" src="./src/main.ts"></script>
 </body>
 </html>
